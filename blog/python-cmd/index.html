@@ -1,0 +1,99 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="stylesheet" href="../../static/pygments.css">
+
+<title>Writing Script Using Python — map32</title>
+
+<body>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7778442232354635",
+      enable_page_level_ads: true
+    });
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-79157065-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <header>
+    <nav class="group">
+      <a>🍁 M.A.P. 32</a>
+      <a  href="../../">Welcome</a>
+      
+      <a  class="active"  href="../../blog/">Blog</a> 
+      
+      <a  href="../../projects/">Projects</a> 
+      
+      <a  href="../../about/">About</a> 
+      
+    </nav>
+  </header>
+  <article>
+    
+  
+  <article class="group">
+  
+  
+    <h2>Writing Script Using Python</h2>
+  
+  <p class="subtitle"> 2013-08-06 </p>
+  <p>There are many old options to call external shell command from python. But the standard way is to use <a href="http://docs.python.org/2/library/subprocess.html">subprocess</a>.</p>
+<p><a href="http://www.python.org/dev/peps/pep-0324/">PEP 324 – PEP proposing the subprocess module</a> is a good resource to understand the philosophy behind subprocess module.</p>
+<h2 id="an-example">An Example</h2><ul>
+<li>Input: assignment3/student_name/Assignment.zip</li>
+<li>Output: extract all <code>Assignment.zip</code> and delete the zip file</li>
+</ul>
+<div class="highlight"><pre><span></span>    <span class="n">raw_args</span> <span class="o">=</span> <span class="s2">&quot;find assignment3 | grep .zip&quot;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">raw_args</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;unzip </span><span class="si">%s</span><span class="s1"> -d </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">[:</span><span class="n">i</span><span class="p">]),</span> <span class="n">shell</span> <span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;rm </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+<h3 id="call">Call()</h3><p><code>subprocess.call()</code> aims to be an enhancement over os.system(), while still very easy to use:</p>
+<p>The motivation behind the call() function is simple: Starting a
+      process and wait for it to finish is a common task.</p>
+<p>Consider this example:</p>
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;stty sane -F &quot;</span> <span class="o">+</span> <span class="n">device</span><span class="p">)</span>
+</pre></div>
+<p>With subprocess.call(), this would look like:</p>
+<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;stty&quot;</span><span class="p">,</span> <span class="s2">&quot;sane&quot;</span><span class="p">,</span> <span class="s2">&quot;-F&quot;</span><span class="p">,</span> <span class="n">device</span><span class="p">])</span>
+</pre></div>
+<p>or, if executing through the shell:</p>
+<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;stty sane -F &quot;</span> <span class="o">+</span> <span class="n">device</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+  </article>
+
+
+  </article>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Blog -->
+  <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7778442232354635" data-ad-slot="5113151625"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <footer>
+    <hr class="slender">
+    <div class="credits">
+    <span>&copy; Copyright 2016 by 🍁 MAP32.</span></br>
+    <span>The design is adapted from the <a href="//github.com/clayh53/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
+    </div>
+  </footer>
+</body>
