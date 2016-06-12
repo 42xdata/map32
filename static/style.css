@@ -554,10 +554,10 @@ header > nav.group, body footer {
   padding-top: 2rem; }
 
 nav.group a.active:before {
-  content: "\0003c\000a0"; }
+  content: "[ "; }
 
 nav.group a.active:after {
-  content: " >"; }
+  content: " ]"; }
 
 header > nav a {
   font-size: 1.2rem;
