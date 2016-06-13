@@ -70,7 +70,7 @@ Essentially we need to migrate to Qt5 to have good retina support in Qt.
 &gt; Max
 </code></pre>
 <p>It is stable enough for my daily use (Some crashes happen occasionally.).</p>
-<p>Some earlier post (in Chinese <sup class="footnote-ref" id="fnref-1"><a href="#fn-1" rel="footnote">1</a></sup>,<sup class="footnote-ref" id="fnref-2"><a href="#fn-2" rel="footnote">2</a></sup>) recommend the software for writing LaTex. {% sidenote 1 '<a href="https://www.douban.com/group/topic/34240015/">https://www.douban.com/group/topic/34240015/</a>' %}</p>
+<p>Some earlier post (in Chinese <sup class="footnote-ref" id="fnref-1"><a href="#fn-1" rel="footnote">1</a></sup>,<sup class="footnote-ref" id="fnref-2"><a href="#fn-2" rel="footnote">2</a></sup>) recommend the software for writing LaTex.</p>
 <p>The TeXmacs workshop videos are very comprehensive and easy to understand.
 If you are impatient, you may go to the 4-th video "the TeXmacs document format, style files, and converters" first.
 It shows the design philosophy behind the TeXmacs.</p>
