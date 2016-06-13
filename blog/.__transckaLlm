@@ -44,12 +44,6 @@
   
         <li class="listing">
           <hr class="slender">
-          <a href="../blog/helm-for-emacs/"><h3 class="contrast">Helm for Emacs</h3></a>
-          <br><span class="smaller">2016-06-13</span>  <br/>
-        </li>       
-  
-        <li class="listing">
-          <hr class="slender">
           <a href="../blog/os-x-shortcut-for-editing/"><h3 class="contrast">OS X Shortcut for Editing</h3></a>
           <br><span class="smaller">2016-06-13</span>  <br/>
         </li>       
@@ -70,6 +64,12 @@
           <hr class="slender">
           <a href="../blog/python-cmd/"><h3 class="contrast">Writing Script Using Python</h3></a>
           <br><span class="smaller">2013-08-06</span>  <br/>
+        </li>       
+  
+        <li class="listing">
+          <hr class="slender">
+          <a href="../blog/helm-for-emacs/"><h3 class="contrast">Helm for Emacs</h3></a>
+          <br><span class="smaller"></span>  <br/>
         </li>       
   
         <li class="listing">

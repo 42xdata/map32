@@ -1,0 +1,86 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="stylesheet" href="../../static/pygments.css">
+
+<title>Helm for Emacs — map32</title>
+
+<body>
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79221870-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7778442232354635",
+      enable_page_level_ads: true
+    });
+  </script>
+  <header>
+    <nav class="group">
+      <a>🍁 M.A.P. 32</a>
+      <a  href="../../">Welcome</a>
+      
+      <a  class="active"  href="../../blog/">Blog</a> 
+      
+      <a  href="../../projects/">Projects</a> 
+      
+      <a  href="../../about/">About</a> 
+      
+    </nav>
+  </header>
+    
+  
+  <article class="group">
+  
+  
+    <h2>Helm for Emacs</h2>
+  
+  <p class="subtitle"> 2016-06-13 </p>
+  <h3 id="how-to-exit-from-the-helm-m-x-mode?">How to exit from the helm M-x mode?</h3><p>It bothers me a lot, and I finnaly find a good solution <a href="https://github.com/davvil/.emacs.d/blob/master/init.el">here</a>.
+You can use <code>Esc</code> to quit the state.</p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">minibuffer-keyboard-quit</span> <span class="p">()</span>
+  <span class="s">&quot;Abort recursive edit.</span>
+<span class="s">In Delete Selection mode, if the mark is active, just deactivate it;</span>
+<span class="s">then it takes a second \\[keyboard-quit] to abort the minibuffer.&quot;</span>
+  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">delete-selection-mode</span> <span class="nv">transient-mark-mode</span> <span class="nv">mark-active</span><span class="p">)</span>
+      <span class="p">(</span><span class="k">setq</span> <span class="nv">deactivate-mark</span>  <span class="no">t</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="s">&quot;*Completions*&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nv">delete-windows-on</span> <span class="s">&quot;*Completions*&quot;</span><span class="p">))</span>
+    <span class="p">(</span><span class="nv">abort-recursive-edit</span><span class="p">)))</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-normal-state-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-visual-state-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-ns-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-completion-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-must-match-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-isearch-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="nv">[escape]</span> <span class="ss">&#39;evil-exit-emacs-state</span><span class="p">))</span>
+</pre></div>
+
+  </article>
+
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Blog -->
+  <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7778442232354635" data-ad-slot="5113151625"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <footer>
+    <hr class="slender">
+    <div>
+        <span>&copy; Copyright 2016 by 🍁 MAP32.</span></br></br>
+    <span>The design is adapted from the <a href="//github.com/clayh53/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
+    </div>
+  </footer>
+</body>
