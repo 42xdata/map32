@@ -2,7 +2,6 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="../../static/style.css">
 <link rel="stylesheet" href="../../static/pygments.css">
-
 <title>Hello World from Lektor — map32</title>
 
 <body>
@@ -25,6 +24,9 @@
     });
   </script>
 <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+<script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
   <header>
     <nav class="group">   
       <h1>🍁 M.A.P. 32</h1>
@@ -49,7 +51,11 @@
     <h2>Hello World from Lektor</h2>
   
   <p class="subtitle"> 2016-06-10 </p>
-  <p>The best document is the source code.</p>
+  <p>Lektor is the system behind this blog. It is</p>
+<blockquote>
+<p>a flexible and powerful static content management system for building complex and beautiful websites out of flat files — for people who do not want to make a compromise between a CMS and a static blog engine.</p>
+</blockquote>
+<p>It is a young project<label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote">So, the best document is the source code :p</span>. But, if you are familar with Python, Flask and Jinja2, you will probably like it.</p>
 <h2 id="how-to-set-key-file-in-lektor">How to set key-file in Lektor?</h2>
 <p>Set your environment variable</p>
 <pre><code>LEKTOR_DEPLOY_KEY_FILE=~/.ssh/id_rsa_xx</code></pre>
@@ -72,7 +78,6 @@
 <li><p>If you cannot reinstall the plugins in step 3, try to flush cache first.</p></li>
 </ol></div>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">lektor</span> plugins flush-cache</code></pre></div>
-<p><span class="math inline">\(s_2\)</span></p>
 <h2 id="adjusting-style">Adjusting Style</h2>
 <div class="list-container"><ul>
 <li><a href="http://32bitkid.github.io/tufte-css/">32bitkid's tufte-css</a>: white and elegant.</li>
