@@ -373,8 +373,8 @@ section {
   padding-bottom: 1rem; }
 
 ul {
-  width: 50%;
-   }
+  width: 100%;
+}
 
 figure, figure img.maincolumn {
   max-width: 55%;
