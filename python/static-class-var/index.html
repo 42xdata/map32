@@ -39,6 +39,7 @@
       
     </nav>
   </header>
+    <hr class="slender">
     
   
   <article class="group">
@@ -49,13 +50,12 @@
   <p class="subtitle"> 2016-06-13 </p>
   <p>Note that the class level varible MUST be refered via the class name.</p>
 <p>The following snippet explains the differences:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">MyClass</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">i</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-</pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">class</span> MyClass:
+...     x <span class="op">=</span> <span class="dv">3</span>
+<span class="op">&gt;&gt;&gt;</span> m <span class="op">=</span> MyClass()
+<span class="op">&gt;&gt;&gt;</span> m.x <span class="op">=</span> <span class="dv">4</span>
+<span class="op">&gt;&gt;&gt;</span> MyClass.i, m.i
+<span class="op">&gt;&gt;&gt;</span> (<span class="dv">3</span>, <span class="dv">4</span>)</code></pre></div>
 
   </article>
 

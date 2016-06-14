@@ -172,6 +172,9 @@
     color: #008080; }
   .highlight .il {
     color: #099; }
+  time{
+      text-transform: uppercase;
+  }
 
 * {
   margin: 0;
@@ -370,10 +373,8 @@ section {
   padding-bottom: 1rem; }
 
 ul {
-  width: 45%;
-  -webkit-padding-start: 5%;
-  -webkit-padding-end: 5%;
-  list-style-type: none; }
+  width: 50%;
+   }
 
 figure, figure img.maincolumn {
   max-width: 55%;
@@ -471,8 +472,8 @@ div.table-wrapper {
   font-size: 1rem; }
 
 pre, pre code, p pre code {
-  width: 52.5%;
-  padding-left: 2.5%;
+  width: 100%;
+  /*padding-left: 2.5%;*/
   overflow-x: auto; }
 
 .fullwidth, li.listing div {
@@ -758,3 +759,26 @@ hr.slender {
   content: "\e60e"; }
 
 /*-- End of Icomoon icon font section --*/
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*ul.pagination li a:hover:not(.active) {background-color: #ddd;}*/

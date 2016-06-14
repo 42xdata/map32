@@ -39,6 +39,7 @@
       
     </nav>
   </header>
+    <hr class="slender">
     
   
   <article class="group">
@@ -48,18 +49,17 @@
   
   <p class="subtitle"> 2016-06-13 </p>
   <p>You cannot change the member of a namedtuple after it is created.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">P</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">P</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span>
-<span class="ne">AttributeError</span><span class="p">:</span> <span class="n">can</span><span class="s1">&#39;t set attribute</span>
-<span class="o">&gt;&gt;&gt;</span>
-</pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> collections <span class="im">import</span> namedtuple
+<span class="op">&gt;&gt;&gt;</span> P <span class="op">=</span> namedtuple(<span class="st">"Point"</span>, [<span class="st">'x'</span>, <span class="st">'y'</span>])
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> P(<span class="dv">1</span>,<span class="dv">2</span>)
+<span class="op">&gt;&gt;&gt;</span> a
+Point(x<span class="op">=</span><span class="dv">1</span>, y<span class="op">=</span><span class="dv">2</span>)
+<span class="op">&gt;&gt;&gt;</span> a.x<span class="op">=</span><span class="dv">3</span>
+Traceback (most recent call last):
+  File <span class="st">"&lt;input&gt;"</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+    a.x<span class="op">=</span><span class="dv">3</span>
+<span class="pp">AttributeError</span>: can<span class="st">'t set attribute</span>
+<span class="st">&gt;&gt;&gt;</span></code></pre></div>
 
   </article>
 

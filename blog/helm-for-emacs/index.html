@@ -39,6 +39,7 @@
       
     </nav>
   </header>
+    <hr class="slender">
     
   
   <article class="group">
@@ -47,26 +48,25 @@
     <h2>Helm for Emacs</h2>
   
   <p class="subtitle"> 2016-06-13 </p>
-  <h3 id="how-to-exit-from-the-helm-m-x-mode?">How to exit from the helm M-x mode?</h3><p>It bothers me a lot, and I finnaly find a good solution <a href="https://github.com/davvil/.emacs.d/blob/master/init.el">here</a>.
-You can use <code>Esc</code> to quit the state. <sidenote> asdf </sidenote></p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">minibuffer-keyboard-quit</span> <span class="p">()</span>
-  <span class="s">&quot;Abort recursive edit.</span>
-<span class="s">In Delete Selection mode, if the mark is active, just deactivate it;</span>
-<span class="s">then it takes a second \\[keyboard-quit] to abort the minibuffer.&quot;</span>
-  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">delete-selection-mode</span> <span class="nv">transient-mark-mode</span> <span class="nv">mark-active</span><span class="p">)</span>
-      <span class="p">(</span><span class="k">setq</span> <span class="nv">deactivate-mark</span>  <span class="no">t</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">get-buffer</span> <span class="s">&quot;*Completions*&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nv">delete-windows-on</span> <span class="s">&quot;*Completions*&quot;</span><span class="p">))</span>
-    <span class="p">(</span><span class="nv">abort-recursive-edit</span><span class="p">)))</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-normal-state-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">evil-visual-state-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-ns-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-completion-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-must-match-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">minibuffer-local-isearch-map</span> <span class="nv">[escape]</span> <span class="ss">&#39;minibuffer-keyboard-quit</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">global-set-key</span> <span class="nv">[escape]</span> <span class="ss">&#39;evil-exit-emacs-state</span><span class="p">))</span>
-</pre></div>
+  <h3 id="how-to-exit-from-the-helm-m-x-mode">How to exit from the helm M-x mode?</h3>
+<p>It bothers me a lot, and I finnaly find a good solution <a href="https://github.com/davvil/.emacs.d/blob/master/init.el">here</a>. You can use <code>Esc</code> to quit the state. <label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote"> asdf </span></p>
+<div class="sourceCode"><pre class="sourceCode lisp"><code class="sourceCode commonlisp">(<span class="kw">defun</span><span class="fu"> minibuffer-keyboard-quit </span>()
+  <span class="st">"Abort recursive edit.</span>
+<span class="st">In Delete Selection mode, if the mark is active, just deactivate it;</span>
+<span class="st">then it takes a second </span>\\<span class="st">[keyboard-quit] to abort the minibuffer."</span>
+  (interactive)
+  (<span class="kw">if</span> (<span class="kw">and</span> delete-selection-mode transient-mark-mode mark-active)
+      (<span class="kw">setq</span> deactivate-mark  <span class="kw">t</span>)
+    (<span class="kw">when</span> (get-buffer <span class="st">"*Completions*"</span>) (delete-windows-on <span class="st">"*Completions*"</span>))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state))</code></pre></div>
 
   </article>
 

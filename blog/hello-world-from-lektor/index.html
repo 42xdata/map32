@@ -39,6 +39,7 @@
       
     </nav>
   </header>
+    <hr class="slender">
     
   
   <article class="group">
@@ -48,37 +49,34 @@
   
   <p class="subtitle"> 2016-06-10 </p>
   <p>The best document is the source code.</p>
-<h2 id="how-to-set-key-file-in-lektor?">How to set key-file in Lektor?</h2><p>Set your environment variable</p>
-<pre><code>LEKTOR_DEPLOY_KEY_FILE=~/.ssh/id_rsa_xx
-</code></pre>
-<h2 id="plugins">Plugins</h2><ul>
+<h2 id="how-to-set-key-file-in-lektor">How to set key-file in Lektor?</h2>
+<p>Set your environment variable</p>
+<pre><code>LEKTOR_DEPLOY_KEY_FILE=~/.ssh/id_rsa_xx</code></pre>
+<h2 id="plugins">Plugins</h2>
+<div class="list-container"><ul>
 <li><a href="https://github.com/ajdavis/lektor-tags">lektor-tags</a></li>
-</ul>
-<h2 id="how-to-install-a-plugin?">How to install a plugin?</h2><p>For example, you may want to install <a href="https://github.com/jamestwebber/blagotube/tree/master/packages/glasseye">this one</a></p>
-<ol>
+</ul></div>
+<h2 id="how-to-install-a-plugin">How to install a plugin?</h2>
+<p>For example, you may want to install <a href="https://github.com/jamestwebber/blagotube/tree/master/packages/glasseye">this one</a></p>
+<div class="list-container"><ol style="list-style-type: decimal">
 <li>Install the local plugin <code>packages/X</code></li>
-</ol>
-<div class="highlight"><pre><span></span>lektor list
-</pre></div>
-<ol>
+</ol></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">lektor</span> list</code></pre></div>
+<div class="list-container"><ol start="2" style="list-style-type: decimal">
 <li>Serve locally.</li>
-</ol>
-<div class="highlight"><pre><span></span>lektor build.
-</pre></div>
-<ol>
-<li><p>If step <1> fails, make sure the dependencies <code>packages/X/setup.py</code> are listed.
-e.g. <code>install_requires=['pypandoc', 'bs4']</code>. Fix the mistake and go to step <1> agian.</p>
-</li>
-<li><p>If you cannot reinstall the plugins in step 3, try to flush cache first.</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span>lektor plugins flush-cache
-</pre></div>
-<p>$s_2$</p>
-<h2 id="adjusting-style">Adjusting Style</h2><ul>
+</ol></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">lektor</span> build.</code></pre></div>
+<div class="list-container"><ol start="3" style="list-style-type: decimal">
+<li><p>If step &lt;1&gt; fails, make sure the dependencies <code>packages/X/setup.py</code> are listed. e.g. <code>install_requires=['pypandoc', 'bs4']</code>. Fix the mistake and go to step &lt;1&gt; agian.</p></li>
+<li><p>If you cannot reinstall the plugins in step 3, try to flush cache first.</p></li>
+</ol></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">lektor</span> plugins flush-cache</code></pre></div>
+<p><span class="math inline">\(s_2\)</span></p>
+<h2 id="adjusting-style">Adjusting Style</h2>
+<div class="list-container"><ul>
 <li><a href="http://32bitkid.github.io/tufte-css/">32bitkid's tufte-css</a>: white and elegant.</li>
 <li><a href="https://github.com/edwardtufte/tufte-css">the classic tufte-css</a></li>
-</ul>
+</ul></div>
 
   </article>
 
