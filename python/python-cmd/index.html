@@ -49,21 +49,18 @@
   <p class="subtitle"> 2013-08-06 </p>
   <p>There are many old options to call external shell command from python. But the standard way is to use <a href="http://docs.python.org/2/library/subprocess.html">subprocess</a>.</p>
 <p><a href="http://www.python.org/dev/peps/pep-0324/">PEP 324 – PEP proposing the subprocess module</a> is a good resource to understand the philosophy behind subprocess module.</p>
-<h2 id="an-example">An Example</h2><ul>
-<li>Input: assignment3/student_name/Assignment.zip</li>
-<li>Output: extract all <code>Assignment.zip</code> and delete the zip file</li>
-</ul>
-<div class="highlight"><pre><span></span>    <span class="n">raw_args</span> <span class="o">=</span> <span class="s2">&quot;find assignment3 | grep .zip&quot;</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">raw_args</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;unzip </span><span class="si">%s</span><span class="s1"> -d </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">[:</span><span class="n">i</span><span class="p">]),</span> <span class="n">shell</span> <span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;rm </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<h2 id="an-example">An Example</h2><p>Input: assignment3/student_name/Assignment.zip
+Output: extract all <code>Assignment.zip</code> and delete the zip file</p>
+<div class="highlight"><pre><span></span><span class="n">raw_args</span> <span class="o">=</span> <span class="s2">&quot;find assignment3 | grep .zip&quot;</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">raw_args</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;unzip </span><span class="si">%s</span><span class="s1"> -d </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">[:</span><span class="n">i</span><span class="p">]),</span> <span class="n">shell</span> <span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;rm </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 <h3 id="call">Call()</h3><p><code>subprocess.call()</code> aims to be an enhancement over os.system(), while still very easy to use:</p>
-<p>The motivation behind the call() function is simple: Starting a
-      process and wait for it to finish is a common task.</p>
+<p>The motivation behind the call() function is simple: Starting a process and wait for it to finish is a common task.</p>
 <p>Consider this example:</p>
 <div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;stty sane -F &quot;</span> <span class="o">+</span> <span class="n">device</span><span class="p">)</span>
 </pre></div>
