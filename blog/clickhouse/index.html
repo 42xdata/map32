@@ -1,9 +1,9 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../static/style.css">
-<link rel="stylesheet" href="../static/pygments.css">
-<title> — map32</title>
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="stylesheet" href="../../static/pygments.css">
+<title>ClickHouse Column-Oriented DBMS — map32</title>
 
 <body>
  <script>
@@ -20,70 +20,52 @@
     <nav class="group">   
       <h1>🍁 M.A.P. 32</h1>
       
-      <a  href="../">Welcome</a>
+      <a  href="../../">Welcome</a>
       
-      <a  href="../about/">/about</a> 
+      <a  href="../../about/">/about</a> 
       
-      <a  class="active"  href="../blog/">/blog</a> 
+      <a  class="active"  href="../../blog/">/blog</a> 
       
-      <a  href="../daily/">/daily</a> 
+      <a  href="../../daily/">/daily</a> 
       
-      <a  href="../osx/">/osx</a> 
+      <a  href="../../osx/">/osx</a> 
       
-      <a  href="../python/">/python</a> 
+      <a  href="../../python/">/python</a> 
       
     </nav>
   </header>
     <hr class="slender">
     
-  <ul>
   
-        <li>
-          <a href="../blog/clickhouse/"><h3 class="contrast">ClickHouse Column-Oriented DBMS</h3></a>
-          <time>2016-06-15</time>
-        </li>       
+  <article class="group">
   
-        <li>
-          <a href="../blog/mobile-friendly/"><h3 class="contrast">Mobile Friendly Website</h3></a>
-          <time>2016-06-15</time>
-        </li>       
   
-        <li>
-          <a href="../blog/text-for-gfonts/"><h3 class="contrast">The Sample Text in Google Fonts</h3></a>
-          <time>2016-06-14</time>
-        </li>       
+    <h2>ClickHouse Column-Oriented DBMS</h2>
   
-        <li>
-          <a href="../blog/helm-for-emacs/"><h3 class="contrast">Helm for Emacs</h3></a>
-          <time>2016-06-13</time>
-        </li>       
-  
-        <li>
-          <a href="../blog/texmacs/"><h3 class="contrast">TeXmacs for Retina🎉</h3></a>
-          <time>2016-06-13</time>
-        </li>       
-  
-        <li>
-          <a href="../blog/hello-world-from-lektor/"><h3 class="contrast">Hello World from Lektor</h3></a>
-          <time>2016-06-10</time>
-        </li>       
-  
-  </ul>
-  </br>
-  
-  <ul class="pagination">
-    <li>
-    
-      <span class="disabled">&laquo; </span>
-    
-    </li>
-    <li>1</li>
-    <li>
-    
-      <span class="disabled">&raquo;</span>
-    
-    </li>
-  </ul>
+  <p class="subtitle"> 2016-06-15 </p>
+  <p>Yandex release a new distributed column-oriented DBMS today called <a href="https://clickhouse.yandex/">ClickHouse</a>[^1].</p>
+<p>The document[^2] is more informative, and it seems just invent another SQL dialect... I am not surprised that it is a column-oriented DBMS since it targets OLAP workload.</p>
+<p>Here is the claimed distinctive features of Clickhouse[^2]:</p>
+<div class="list-container"><ol style="list-style-type: decimal">
+<li>True column-oriented DBMS.</li>
+<li>Data compression.</li>
+<li>Disk storage of data.</li>
+<li>Parallel processing on multiple cores.</li>
+<li>Distributed processing on multiple servers.</li>
+<li>SQL support.</li>
+<li>Vector engine.</li>
+<li>Real-time data updates.</li>
+<li>Indexes.</li>
+<li>Suitable for online queries.</li>
+<li>Support for approximated calculations.</li>
+<li>Support for nested data structures. Support for arrays as data types.</li>
+<li>Support for restrictions on query complexity, along with quotas.</li>
+<li>Data replication and support for data integrity on replicas.</li>
+</ol></div>
+<p>Still, it is yet another modern column-oriened database. But it is glad there are more and more open source projects there. The No.12 <code>Support for nested data structures. Support for arrays as data types.</code> is of my interest, of course.</p>
+<p>[^1] https://news.ycombinator.com/item?id=11908254 [^2] https://clickhouse.yandex/reference_en.html</p>
+
+  </article>
 
 
 
