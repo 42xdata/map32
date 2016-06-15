@@ -43,34 +43,26 @@
     <h2>ClickHouse Column-Oriented DBMS</h2>
   
   <p class="subtitle"> 2016-06-15 </p>
-  <p>Yandex release a new distributed column-oriented DBMS today called <a href="https://clickhouse.yandex/">ClickHouse</a><a class="footnoteRef" href="#fn1" id="fnref1"><sup>1</sup></a>.</p>
-<p>The document<a class="footnoteRef" href="#fn2" id="fnref2"><sup>2</sup></a> is more informative, and it seems just invent another SQL dialect... I am not surprised that it is a column-oriented DBMS since it targets OLAP workload.</p>
-<p>Here is the claimed distinctive features of Clickhouse<a class="footnoteRef" href="#fn3" id="fnref3"><sup>3</sup></a>:</p>
-<div class="list-container"><ol style="list-style-type: decimal">
-<li>True column-oriented DBMS.</li>
-<li>Data compression.</li>
-<li>Disk storage of data.</li>
-<li>Parallel processing on multiple cores.</li>
-<li>Distributed processing on multiple servers.</li>
-<li>SQL support.</li>
-<li>Vector engine.</li>
-<li>Real-time data updates.</li>
-<li>Indexes.</li>
-<li>Suitable for online queries.</li>
-<li>Support for approximated calculations.</li>
-<li>Support for nested data structures. Support for arrays as data types.</li>
-<li>Support for restrictions on query complexity, along with quotas.</li>
-<li>Data replication and support for data integrity on replicas.</li>
-</ol></div>
-<p>Still, it is yet another modern column-oriened database. But it is glad there are more and more open source projects there. The No.12 <code>Support for nested data structures. Support for arrays as data types.</code> is of my interest, of course.</p>
-<div class="footnotes">
-<hr/>
-<div class="list-container"><ol>
-<li id="fn1"><p>https://news.ycombinator.com/item?id=11908254<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>https://clickhouse.yandex/reference_en.html<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>https://clickhouse.yandex/reference_en.html<a href="#fnref3">↩</a></p></li>
-</ol></div>
-</div>
+  <p>Yandex release a new distributed column-oriented DBMS <a href="https://news.ycombinator.com/item?id=11908254">today</a> called <a href="https://clickhouse.yandex/">ClickHouse</a>. <label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote">Well, Yandex has a TLD.</span></p>
+<p>While the homepage is fancier, the <a href="https://clickhouse.yandex/reference_en.html">reference document</a> is much more informative.</p>
+<p>Here is the claimed <a href="https://clickhouse.yandex/reference_en.html">distinctive features of Clickhouse</a>: <label class="margin-toggle sidenote-number" for="sn-1"></label><input class="margin-toggle" id="sn-1" type="checkbox"/><span class="sidenote">More preciesly, they are the distinctive features compared with a row-oriented DB.</span></p>
+<pre><code>1. True column-oriented DBMS.
+2. Data compression.
+3. Disk storage of data.
+4. Parallel processing on multiple cores.
+5. Distributed processing on multiple servers.
+6. SQL support.
+7. Vector engine.
+8. Real-time data updates.
+9. Indexes.
+10. Suitable for online queries.
+11. Support for approximated calculations.
+12. Support for nested data structures. Support for arrays as data types.
+13. Support for restrictions on query complexity, along with quotas.
+14. Data replication and support for data integrity on replicas.</code></pre>
+<p>It is well known that the column-oriented DBMS family is the king of OLAP workload. From the academeic point of a view, these points are not very technical. For example, #2 Data Compression is a standard feature of a C* DB. You may find the same list in any modern column-oriened database nowadays. But it is always to glad to see more open source projects that serves real world production.</p>
+<p>I can also imagine to support nested data types (#12), it may invent another SQL dialect.</p>
+<p>I am looking forward to read the design along with the suvery paper of the column-store.</p>
 
   </article>
 
