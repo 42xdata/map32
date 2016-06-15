@@ -55,11 +55,18 @@
     <h2>Mobile Friendly Website</h2>
   
   <p class="subtitle"> 2016-06-15 </p>
-  <p>I realize that my website is not very mobile friendly. I am not an expert in web design, so bear with me. And here is my notes on improve the mobile friendness. The reference will be <a class="footnoteRef" href="#fn1" id="fnref1"><sup>1</sup></a>.</p>
+  <p>I realize that my website is not mobile friendly<a class="footnoteRef" href="#fn1" id="fnref1"><sup>1</sup></a>. I am not an expert in web design, so bear with me. And here is my notes on improve the mobile friendness. The reference will be <a class="footnoteRef" href="#fn2" id="fnref2"><sup>2</sup></a>.</p>
+<p>The firse improvement is add a viewpoint:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">viewport</span><span class="ot"> content=</span><span class="st">"width=device-width, initial-scale=1"</span><span class="kw">&gt;</span></code></pre></div>
+<p>Now, it is much better. But</p>
+<blockquote>
+<p>The page content is too wide for the viewport, forcing the user to scroll horizontally. Size the page content to the viewport to provide a better user experience. The page content is 779 CSS pixels wide, but the viewport is only 411 CSS pixels wide.</p>
+</blockquote>
 <div class="footnotes">
 <hr/>
 <div class="list-container"><ol>
-<li id="fn1"><p>https://developers.google.com/speed/docs/insights/ConfigureViewport#overview<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>https://developers.google.com/speed/pagespeed/insights<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>https://developers.google.com/speed/docs/insights/ConfigureViewport#overview<a href="#fnref2">↩</a></p></li>
 </ol></div>
 </div>
 
@@ -82,13 +89,14 @@
         <span>Theme is adapted from the <a href="//clayh53.github.io/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
     </div>
   </footer>
-   <script type="text/javascript">
+<script type="text/javascript">
   ( function() {
     if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"xiaom","width":550,"height":250,"sid":"Chitika Default"};
+    var unit = {"calltype":"async[2]","publisher":"xiaom","width":300,"height":250,"sid":"Chitika Default"};
     var placement_id = window.CHITIKA.units.length;
     window.CHITIKA.units.push(unit);
     document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
 }());
 </script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 </body>
