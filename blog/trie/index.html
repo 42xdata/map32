@@ -3,7 +3,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../../static/style.css">
 <link rel="stylesheet" href="../../static/pygments.css">
-<title>ClickHouse Column-Oriented DBMS — map32</title>
+<title>Trie — map32</title>
 
 <body>
  <script>
@@ -40,29 +40,16 @@
   <article class="group">
   
   
-    <h2>ClickHouse Column-Oriented DBMS</h2>
+    <h2>Trie</h2>
   
-  <p class="subtitle"> 2016-06-15 </p>
-  <p>Yandex release a new distributed column-oriented DBMS <a href="https://news.ycombinator.com/item?id=11908254">today</a> called <a href="https://clickhouse.yandex/">ClickHouse</a>. <label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote">Well, Yandex has a Top Level Domain.</span></p>
-<p>While the homepage is fancier, the <a href="https://clickhouse.yandex/reference_en.html">reference document</a> is much more informative.</p>
-<p>Here is the claimed <a href="https://clickhouse.yandex/reference_en.html">distinctive features of Clickhouse</a>: <label class="margin-toggle sidenote-number" for="sn-1"></label><input class="margin-toggle" id="sn-1" type="checkbox"/><span class="sidenote">More preciesly, they are the distinctive features compared with a row-oriented DB.</span></p>
-<pre><code>1. True column-oriented DBMS.
-2. Data compression.
-3. Disk storage of data.
-4. Parallel processing on multiple cores.
-5. Distributed processing on multiple servers.
-6. SQL support.
-7. Vector engine.
-8. Real-time data updates.
-9. Indexes.
-10. Suitable for online queries.
-11. Support for approximated calculations.
-12. Support for nested data structures. Support for arrays as data types.
-13. Support for restrictions on query complexity, along with quotas.
-14. Data replication and support for data integrity on replicas.</code></pre>
-<p>It is well known that the column-oriented DBMS family is the king of OLAP workload. From the academeic point of a view, these points are not very technical. For example, #2 Data Compression is a standard feature of a C* DB. You may find the same list in any modern column-oriened database nowadays. But it is always to glad to see more open source projects that serves real world production.</p>
-<p>I can also imagine to support nested data types (#12), it may invent another SQL dialect.</p>
-<p>I am looking forward to read the design along with the suvery paper of the column-store.</p>
+  <p class="subtitle"> 2016-06-14 </p>
+  <h2 id="readings">Readings:</h2>
+<div class="list-container"><ul>
+<li>Basic: Robert Sedgewick, Algorithms, Part II, <a href="https://class.coursera.org/algs4partII-007/lecture">Week 5, R-way Tries, Ternary Search Tries and Character-Based Operations</a></li>
+<li>Advanced Course:Erik Demaine, MIT 6.851 Advanced Data Structures: <a href="http://courses.csail.mit.edu/6.851/spring12/lectures/L16.html">Lecture 16</a></li>
+</ul></div>
+<p>Prof. Sedgewick's course is very comprehensive and clear.</p>
+<p>(t14:30.)</p>
 
   </article>
 
