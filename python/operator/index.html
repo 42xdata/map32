@@ -2,10 +2,10 @@
 <head>
   <meta charset="utf-8">
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../static/style.css">
-  <link rel="stylesheet" href="../static/pygments.css">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
   <title>
-     MAP32
+    Comprehension Syntax MAP32
   </title>
  
   <script type="text/javascript">var switchTo5x=true;</script>
@@ -38,17 +38,17 @@
     <nav class="group">   
       <h1>🍁 M.A.P. 32</h1>
       
-      <a  href="../">Welcome</a>
+      <a  href="../../">Welcome</a>
       
-        <a  href="../about/">/about</a>
+        <a  href="../../about/">/about</a>
       
-        <a  href="../blog/">/blog</a>
+        <a  href="../../blog/">/blog</a>
       
-        <a  href="../daily/">/daily</a>
+        <a  href="../../daily/">/daily</a>
       
-        <a  href="../osx/">/osx</a>
+        <a  href="../../osx/">/osx</a>
       
-        <a  class="active"  href="../python/">/python</a>
+        <a  class="active"  href="../../python/">/python</a>
       
         
       
@@ -56,49 +56,32 @@
   </header>
     <hr class="slender">
     
-  <ul>
   
-        <li>
-          <a href="../python/operator/"><h3 class="contrast">Comprehension Syntax</h3></a>
-          <time>2016-06-20</time>
-        </li>       
+  <article class="group">
   
-        <li>
-          <a href="../python/comprehension-synatx/"><h3 class="contrast">Comprehension Syntax in Python</h3></a>
-          <time>2016-06-20</time>
-        </li>       
   
-        <li>
-          <a href="../python/immutable-tuples-in-python/"><h3 class="contrast">Immutable Tuples in Python</h3></a>
-          <time>2016-06-13</time>
-        </li>       
+    <h2>Comprehension Syntax</h2>
   
-        <li>
-          <a href="../python/static-class-var/"><h3 class="contrast">Python Staic Class Variable</h3></a>
-          <time>2016-06-13</time>
-        </li>       
-  
-        <li>
-          <a href="../python/python-cmd/"><h3 class="contrast">Writing Script Using Python</h3></a>
-          <time>2013-08-06</time>
-        </li>       
-  
-  </ul>
-  </br>
-  
-  <ul class="pagination">
-    <li>
-    
-      <span class="disabled">&laquo; </span>
-    
-    </li>
-    <li>1</li>
-    <li>
-    
-      <span class="disabled">&raquo;</span>
-    
-    </li>
-  </ul>
+  <p class="subtitle"> 2016-06-20 </p>
+  <p>The Python <a href="https://docs.python.org/2/library/operator.html">operator</a> module export a set of efficient functions corresponding to the intrinsic operators of Python. This module is helpful when you try to use the functional programming paradigms.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> inventory <span class="op">=</span> [(<span class="st">'apple'</span>, <span class="dv">3</span>), (<span class="st">'banana'</span>, <span class="dv">2</span>), (<span class="st">'pear'</span>, <span class="dv">5</span>), (<span class="st">'orange'</span>, <span class="dv">1</span>)]
+<span class="op">&gt;&gt;&gt;</span> getcount <span class="op">=</span> itemgetter(<span class="dv">1</span>)
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">map</span>(getcount, inventory)
+[<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">1</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">sorted</span>(inventory, key<span class="op">=</span>getcount)
+[(<span class="st">'orange'</span>, <span class="dv">1</span>), (<span class="st">'banana'</span>, <span class="dv">2</span>), (<span class="st">'apple'</span>, <span class="dv">3</span>), (<span class="st">'pear'</span>, <span class="dv">5</span>)]
+
+<span class="kw">def</span> itemgetter(<span class="op">*</span>items):
+    <span class="cf">if</span> <span class="bu">len</span>(items) <span class="op">==</span> <span class="dv">1</span>:
+        item <span class="op">=</span> items[<span class="dv">0</span>]
+        <span class="kw">def</span> g(obj):
+            <span class="cf">return</span> obj[item]
+    <span class="cf">else</span>:
+        <span class="kw">def</span> g(obj):
+            <span class="cf">return</span> <span class="bu">tuple</span>(obj[item] <span class="cf">for</span> item <span class="op">in</span> items)
+    <span class="cf">return</span> g</code></pre></div>
+
+  </article>
 
 
   
