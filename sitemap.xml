@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>http://www.map32.me/</loc></url>
-  <url><loc>http://www.map32.me/about/</loc></url>
   <url><loc>http://www.map32.me/blog/</loc></url>
   <url><loc>http://www.map32.me/blog/multi-github/</loc></url>
   <url><loc>http://www.map32.me/blog/selfcontrol/</loc></url>
@@ -15,7 +14,6 @@
   <url><loc>http://www.map32.me/blog/texmacs/</loc></url>
   <url><loc>http://www.map32.me/blog/hello-world-from-lektor.1</loc></url>
   <url><loc>http://www.map32.me/blog/texmacs-bib/</loc></url>
-  <url><loc>http://www.map32.me/daily/</loc></url>
   <url><loc>http://www.map32.me/osx/</loc></url>
   <url><loc>http://www.map32.me/osx/switch-full-screen-app/</loc></url>
   <url><loc>http://www.map32.me/osx/os-x-shortcut-for-editing/</loc></url>
@@ -26,4 +24,6 @@
   <url><loc>http://www.map32.me/python/static-class-var/</loc></url>
   <url><loc>http://www.map32.me/python/python-cmd/</loc></url>
   <url><loc>http://www.map32.me/python/hashable/</loc></url>
+  <url><loc>http://www.map32.me/daily/</loc></url>
+  <url><loc>http://www.map32.me/about/</loc></url>
 </urlset>
