@@ -1,0 +1,116 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
+  <title>
+    Github for Multiple Accounts MAP32
+  </title>
+ 
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "c8fda848-22bf-4aa9-8200-eb22ba753156", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79221870-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+  <header>
+  <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Responsive -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-7778442232354635"
+      data-ad-slot="6816884022"
+      data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+    <nav class="group">   
+      <h1>🍁 M.A.P. 32</h1>
+      
+      <a  href="../../">Welcome</a>
+      
+        <a  href="../../about/">/about</a>
+      
+        <a  class="active"  href="../../blog/">/blog</a>
+      
+        <a  href="../../daily/">/daily</a>
+      
+        <a  href="../../osx/">/osx</a>
+      
+        <a  href="../../python/">/python</a>
+      
+        
+      
+    </nav>
+  </header>
+    <hr class="slender">
+    
+  
+  <article class="group">
+  
+  
+    <h2>Github for Multiple Accounts</h2>
+  
+  <p class="subtitle"> 2016-06-23 </p>
+  <p>You may have multiple github account for different projects. And you have to deploy the SSH-key properly.</p>
+<p><a href="https://help.github.com/articles/error-permission-denied-publickey/">The Github Document</a> gives an instrunction on how to trouble shooting the problem. <a href="https://gist.github.com/jexchan/2351996">This gist</a> gives a full guide to the whole process.</p>
+<p>Do not forget to use</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh-add</span> ~/.ssh/id_rsa_mykey</code></pre></div>
+<p>to add your new key.</p>
+<p>Then, use</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh-add</span> -l</code></pre></div>
+<p>to verify your new key.</p>
+<p>Why?</p>
+<p>You need to understand <a href="https://www.wikiwand.com/en/Ssh-agent">ssh-agent</a>. In short, it is to avoid to enter your SSH passphrase&lt; sidenote&gt;Even you did not setup a passphrase, it is required in OSX, at least for github from my experience.</p> every time you try to login even when you are just temporarily disconnected.
+<blockquote>
+<p>SSH client programs (such as ssh from OpenSSH) typically run for the duration of a remote login session and are configured to look for the user's private key in a file in the user's home directory (e.g., .ssh/id_rsa). For added security (for instance, against an attacker that can read any file on the local file-system), it is common to store the private key in an encrypted form, where the encryption key is computed from a passphrase that the user has memorized. Because typing the passphrase can be tedious, many users would prefer to enter it just once per local login session. The most secure place to store the unencrypted key is in program memory, and in Unix-like operating systems, memory is normally associated with a process. A normal SSH client process cannot be used to store the unencrypted key because SSH client processes only last the duration of a remote login session. Therefore, users run a program called ssh-agent that runs the duration of a local login session, stores unencrypted keys in memory, and communicates with SSH clients using a Unix domain socket.</p>
+</blockquote>
+
+  </article>
+
+
+  
+<footer>
+  <div>
+    <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+    <span class='st_facebook_hcount' displayText='Facebook'></span>
+    <span class='st_twitter_hcount' displayText='Tweet'></span>
+    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+    <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+    <span class='st_email_hcount' displayText='Email'></span>
+    </div>
+    </br>
+  <div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7778442232354635",
+        enable_page_level_ads: true
+      });
+    </script>
+    <!-- Blog -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7778442232354635" data-ad-slot="5113151625"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <hr class="slender">
+  <div>
+      <span>&copy; Copyright 2016 by 🍁 MAP32.</span></br></br>
+      <span>Powered by <a href=https://www.getlektor.com/>Lektor.</a></br></br>
+      <span>Theme is adapted from the <a href="//clayh53.github.io/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
+  </div>
+
+</footer>
+</body>
