@@ -1,0 +1,11 @@
+{
+    "name": "Alex",
+    "address": {
+        "city": "London",
+        "country": "UK" 
+    },
+    "contact": [
+        {"home": "(000)-111-222"},
+        {"mobile": "(000)-111-333"}
+    ]
+}

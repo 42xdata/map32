@@ -2,8 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>http://www.map32.me/</loc></url>
   <url><loc>http://www.map32.me/blog/</loc></url>
-  <url><loc>http://www.map32.me/blog/uk-eu/</loc></url>
+  <url><loc>http://www.map32.me/blog/brexit/</loc></url>
   <url><loc>http://www.map32.me/blog/multi-github/</loc></url>
+  <url><loc>http://www.map32.me/blog/jq/</loc></url>
   <url><loc>http://www.map32.me/blog/yorgurt/</loc></url>
   <url><loc>http://www.map32.me/blog/selfcontrol/</loc></url>
   <url><loc>http://www.map32.me/blog/cashflow/</loc></url>
@@ -14,12 +15,13 @@
   <url><loc>http://www.map32.me/blog/text-for-gfonts/</loc></url>
   <url><loc>http://www.map32.me/blog/helm-for-emacs/</loc></url>
   <url><loc>http://www.map32.me/blog/texmacs/</loc></url>
-  <url><loc>http://www.map32.me/blog/hello-world-from-lektor.1</loc></url>
+  <url><loc>http://www.map32.me/blog/hello-world-from-lektor/</loc></url>
   <url><loc>http://www.map32.me/blog/texmacs-bib/</loc></url>
   <url><loc>http://www.map32.me/osx/</loc></url>
   <url><loc>http://www.map32.me/osx/switch-full-screen-app/</loc></url>
   <url><loc>http://www.map32.me/osx/os-x-shortcut-for-editing/</loc></url>
   <url><loc>http://www.map32.me/python/</loc></url>
+  <url><loc>http://www.map32.me/python/fileop/</loc></url>
   <url><loc>http://www.map32.me/python/comprehension-synatx/</loc></url>
   <url><loc>http://www.map32.me/python/operator/</loc></url>
   <url><loc>http://www.map32.me/python/immutable-tuples-in-python/</loc></url>

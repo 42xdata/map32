@@ -1,0 +1,124 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
+  <title>
+    File operation in Python MAP32
+  </title>
+ 
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "c8fda848-22bf-4aa9-8200-eb22ba753156", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79221870-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+  <header>
+  <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Responsive -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-7778442232354635"
+      data-ad-slot="6816884022"
+      data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+    <nav class="group">   
+      <h1>🍁 M.A.P. 32</h1>
+      
+      <a  href="../../">Welcome</a>
+      
+        <a  href="../../blog/">/blog</a>
+      
+        <a  href="../../osx/">/osx</a>
+      
+        <a  class="active"  href="../../python/">/python</a>
+      
+        
+      
+        <a  href="../../daily/">/daily</a>
+      
+        <a  href="../../about/">/about</a>
+      
+    </nav>
+  </header>
+    <hr class="slender">
+    
+  
+  <article class="group">
+  
+  
+    <h2>File operation in Python</h2>
+  
+  <p class="subtitle"> 2016-06-24 </p>
+  <h1 id="task-how-to-refer-relative-path-of-resources">Task: how to refer relative path of resources</h1>
+<p>Use <code>__file__</code> attribute.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fn <span class="op">=</span> os.path.join(os.path.dirname(<span class="va">__file__</span>), <span class="st">'my_file'</span>)</code></pre></div>
+<blockquote>
+<p>****file**** is the pathname of the file from which the module was loaded, if it was loaded from a file. The <code>__file__</code> attribute is not present for C modules that are statically linked into the interpreter; for extension modules loaded dynamically from a shared library, it is the pathname of the shared library file.</p>
+</blockquote>
+<h1 id="task-how-to-iterate-directory-recursively">Task: how to iterate directory recursively</h1>
+<p>Use <a href="https://docs.python.org/2/library/os.html#os.walk">os.walk()</a> function. It is a powerful function that could be leveraged to perform many tasks.</p>
+<pre><code>os.walk(top, topdown=True, onerror=None, followlinks=False)
+    Generate the file names in a directory tree by walking the tree either top-down or bottom-up.
+    For each directory in the tree rooted at directory top (including top itself), 
+    it yields a 3-tuple (dirpath, dirnames, filenames).</code></pre>
+<h2 id="subtask-get-the-first-level-sub-directories-of-the-current-directory">Subtask: Get the first level sub-directories of the current directory</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">next</span>(os.walk(<span class="st">'.'</span>))[<span class="dv">1</span>]</code></pre></div>
+<pre><code>next(iterator[, default])
+    Retrieve the next item from the iterator by calling its next() method.
+    If default is given, it is returned if the iterator is exhausted, 
+    otherwise StopIteration is raised.</code></pre>
+<h1 id="task-list-all-files-in-a-directory">Task: list all files in a directory</h1>
+<p>Use the <code>os.listdir</code> function with <code>os.path.isfile</code> testing.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">files <span class="op">=</span> [f <span class="cf">for</span> f <span class="op">in</span> os.listdir(<span class="st">'.'</span>) <span class="cf">if</span> os.path.isfile(f)]</code></pre></div>
+
+  </article>
+
+
+  
+<footer>
+  <div>
+    <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+    <span class='st_facebook_hcount' displayText='Facebook'></span>
+    <span class='st_twitter_hcount' displayText='Tweet'></span>
+    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+    <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+    <span class='st_email_hcount' displayText='Email'></span>
+    </div>
+    </br>
+  <div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7778442232354635",
+        enable_page_level_ads: true
+      });
+    </script>
+    <!-- Blog -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7778442232354635" data-ad-slot="5113151625"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <hr class="slender">
+  <div>
+      <span>&copy; Copyright 2016 by 🍁 MAP32.</span></br></br>
+      <span>Powered by <a href=https://www.getlektor.com/>Lektor.</a></br></br>
+      <span>Theme is adapted from the <a href="//clayh53.github.io/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
+  </div>
+
+</footer>
+</body>

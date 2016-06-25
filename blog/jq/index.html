@@ -1,0 +1,149 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
+  <title>
+    jq MAP32
+  </title>
+ 
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "c8fda848-22bf-4aa9-8200-eb22ba753156", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79221870-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+  <header>
+  <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Responsive -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-7778442232354635"
+      data-ad-slot="6816884022"
+      data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+    <nav class="group">   
+      <h1>🍁 M.A.P. 32</h1>
+      
+      <a  href="../../">Welcome</a>
+      
+        <a  class="active"  href="../../blog/">/blog</a>
+      
+        <a  href="../../osx/">/osx</a>
+      
+        <a  href="../../python/">/python</a>
+      
+        
+      
+        <a  href="../../daily/">/daily</a>
+      
+        <a  href="../../about/">/about</a>
+      
+    </nav>
+  </header>
+    <hr class="slender">
+    
+  
+  <article class="group">
+  
+  
+    <h2>jq</h2>
+  
+  <p class="subtitle"> 2016-06-23 </p>
+  <p>jq is the SED for JSON.</p>
+<p><a href="http://jqplay.org">jqplay</a> gives some basic examples.</p>
+<p>However, it may not straightforwad to perform some complicated tasks.</p>
+<p>For example, given <code>eg.json</code> as follows:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Alex"</span><span class="fu">,</span>
+    <span class="dt">"address"</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">"city"</span><span class="fu">:</span> <span class="st">"London"</span><span class="fu">,</span>
+        <span class="dt">"country"</span><span class="fu">:</span> <span class="st">"UK"</span> 
+    <span class="fu">},</span>
+    <span class="dt">"contact"</span><span class="fu">:</span> <span class="ot">[</span>
+        <span class="fu">{</span><span class="dt">"home"</span><span class="fu">:</span> <span class="st">"(000)-111-222"</span><span class="fu">}</span><span class="ot">,</span>
+        <span class="fu">{</span><span class="dt">"mobile"</span><span class="fu">:</span> <span class="st">"(000)-111-333"</span><span class="fu">}</span>
+    <span class="ot">]</span>
+<span class="fu">}</span></code></pre></div>
+<h2 id="task-extract-all-data-path-unsolved">Task: Extract all data path [unsolved]</h2>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">jq</span> <span class="st">'keys'</span> example.json</code></pre></div>
+<p>returns</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="ot">[</span>
+  <span class="st">"address"</span><span class="ot">,</span>
+  <span class="st">"contact"</span><span class="ot">,</span>
+  <span class="st">"name"</span>
+<span class="ot">]</span></code></pre></div>
+<p>How could we get all the nested level keys?</p>
+<p>My first attempt is</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">jq</span> <span class="st">'.. | objects | keys'</span> eg.json</code></pre></div>
+<p>It gives me</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="ot">[</span>
+  <span class="st">"address"</span><span class="ot">,</span>
+  <span class="st">"contact"</span><span class="ot">,</span>
+  <span class="st">"name"</span>
+<span class="ot">]</span>
+<span class="ot">[</span>
+  <span class="st">"city"</span><span class="ot">,</span>
+  <span class="st">"country"</span>
+<span class="ot">]</span>
+<span class="ot">[</span>
+  <span class="st">"home"</span>
+<span class="ot">]</span>
+<span class="ot">[</span>
+  <span class="st">"mobile"</span>
+<span class="ot">]</span></code></pre></div>
+<p>hmm, we are close.</p>
+<h2 id="task-get-all-non-empty-property.">Task: get all non-empty property.</h2>
+<p>To get all 'X' property (including nested)</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">jq</span> <span class="st">'.. | objects.X | select(. | length &gt;0)'</span> eg.json </code></pre></div>
+
+  </article>
+
+
+  
+<footer>
+  <div>
+    <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+    <span class='st_facebook_hcount' displayText='Facebook'></span>
+    <span class='st_twitter_hcount' displayText='Tweet'></span>
+    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+    <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+    <span class='st_email_hcount' displayText='Email'></span>
+    </div>
+    </br>
+  <div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7778442232354635",
+        enable_page_level_ads: true
+      });
+    </script>
+    <!-- Blog -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7778442232354635" data-ad-slot="5113151625"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <hr class="slender">
+  <div>
+      <span>&copy; Copyright 2016 by 🍁 MAP32.</span></br></br>
+      <span>Powered by <a href=https://www.getlektor.com/>Lektor.</a></br></br>
+      <span>Theme is adapted from the <a href="//clayh53.github.io/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
+  </div>
+
+</footer>
+</body>
