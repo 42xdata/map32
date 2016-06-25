@@ -67,7 +67,7 @@
 <p>Use <code>__file__</code> attribute.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fn <span class="op">=</span> os.path.join(os.path.dirname(<span class="va">__file__</span>), <span class="st">'my_file'</span>)</code></pre></div>
 <blockquote>
-<p>****file**** is the pathname of the file from which the module was loaded, if it was loaded from a file. The <code>__file__</code> attribute is not present for C modules that are statically linked into the interpreter; for extension modules loaded dynamically from a shared library, it is the pathname of the shared library file.</p>
+<p><code>__file__</code> is the pathname of the file from which the module was loaded, if it was loaded from a file. The <code>__file__</code> attribute is not present for C modules that are statically linked into the interpreter; for extension modules loaded dynamically from a shared library, it is the pathname of the shared library file.</p>
 </blockquote>
 <h1 id="task-how-to-iterate-directory-recursively">Task: how to iterate directory recursively</h1>
 <p>Use <a href="https://docs.python.org/2/library/os.html#os.walk">os.walk()</a> function. It is a powerful function that could be leveraged to perform many tasks.</p>
