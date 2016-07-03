@@ -2,10 +2,10 @@
 <head>
   <meta charset="utf-8">
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../static/style.css">
-  <link rel="stylesheet" href="../../static/pygments.css">
+  <link rel="stylesheet" href="../../../static/style.css">
+  <link rel="stylesheet" href="../../../static/pygments.css">
   <title>
-    iMac Retina 27 as the External Display MAP32
+     MAP32
   </title>
  
   <script type="text/javascript">var switchTo5x=true;</script>
@@ -38,52 +38,47 @@
     <nav class="group">   
       <h1>🍁 M.A.P. 32</h1>
       
-      <a  href="../../">Welcome</a>
+      <a  href="../../../">Welcome</a>
       
-        <a  href="../../blog/">/blog</a>
+        <a  class="active"  href="../../../blog/">/blog</a>
       
-        <a  class="active"  href="../../osx/">/osx</a>
+        <a  href="../../../osx/">/osx</a>
       
-        <a  href="../../python/">/python</a>
+        <a  href="../../../python/">/python</a>
       
         
       
-        <a  href="../../daily/">/daily</a>
+        <a  href="../../../daily/">/daily</a>
       
-        <a  href="../../about/">/about</a>
+        <a  href="../../../about/">/about</a>
       
     </nav>
   </header>
     <hr class="slender">
     
+  <ul>
   
-  <article class="group">
+        <li>
+          <a href="../../../blog/texmacs-bib/"><h3 class="contrast"></h3></a>
+          <time></time>
+        </li>       
   
+  </ul>
+  </br>
   
-    <h1>iMac Retina 27 as the External Display</h1>
-  
-  <p class="subtitle"><time>2016-07-03</time></p>
-  <p>It is known that the iMac Retina 27 inch does not support the Target Display Mode. And you cannot use an iMac as an external display. However, there is a workaround---use thunderblot bridge and screen sharing. Here is the setup.</p>
-<div class="list-container"><ol style="list-style-type: decimal">
-<li>Connect your Macbook with iMac.</li>
-<li>In the network, you should see a thunder bridge connection on both your iMac and Macbook. We only care the connection in your Macbook.</li>
-<li><span class="citation">@Macbook</span>, assign an manually IP address to your thunder bridge as shown below. (such that you won't need to reconnect with another IP address when you disconnected from the iMac)</li>
-<li><span class="citation">@iMac</span>, use screen sharing application to connect to your Macbook.</li>
-</ol></div>
-<div class="figure">
-<img alt="Thunder Bridge Configuration" src="thunder-bridge.png"/>
-<p class="caption">Thunder Bridge Configuration</p>
-</div>
-<p>I can still feel latency in the screen sharing. But it is workable:-)</p>
-<p>Now, one technical question--why should we assign an address in the form of <code>169.254.x.x</code>? This kind address is a <a href="https://www.wikiwand.com/en/Link-local_address#/IPv4">link-local address</a>, which is valid only for communications within the network segment or the broadcast domain that the host is connected to.</p>
-<blockquote>
-<p>In RFC 3927, the Internet Engineering Task Force has reserved the address block 169.254.0.0/16. From this block, the address range 169.254.1.0 to 169.254.254.255 may be used for link-local addressing in Internet Protocol Version 4.</p>
-</blockquote>
-<blockquote>
-<p>Microsoft refers to this address auto-configuration method as Automatic Private IP Addressing (APIPA). It is sometimes also casually referred to as auto-IP.</p>
-</blockquote>
-
-  </article>
+  <ul class="pagination">
+    <li>
+    
+      <a href="../../../blog/page/2/">&laquo; Previous</a>
+    
+    </li>
+    <li>3</li>
+    <li>
+    
+      <span class="disabled">&raquo;</span>
+    
+    </li>
+  </ul>
 
 
   
