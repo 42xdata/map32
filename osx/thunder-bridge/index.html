@@ -2,10 +2,10 @@
 <head>
   <meta charset="utf-8">
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../static/style.css">
-  <link rel="stylesheet" href="../static/pygments.css">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
   <title>
-     MAP32
+    iMac Retina 27 as the External Display MAP32
   </title>
  
   <script type="text/javascript">var switchTo5x=true;</script>
@@ -38,57 +38,44 @@
     <nav class="group">   
       <h1>🍁 M.A.P. 32</h1>
       
-      <a  href="../">Welcome</a>
+      <a  href="../../">Welcome</a>
       
-        <a  href="../blog/">/blog</a>
+        <a  href="../../blog/">/blog</a>
       
-        <a  class="active"  href="../osx/">/osx</a>
+        <a  class="active"  href="../../osx/">/osx</a>
       
-        <a  href="../python/">/python</a>
+        <a  href="../../python/">/python</a>
       
         
       
-        <a  href="../daily/">/daily</a>
+        <a  href="../../daily/">/daily</a>
       
-        <a  href="../about/">/about</a>
+        <a  href="../../about/">/about</a>
       
     </nav>
   </header>
     <hr class="slender">
     
-  <ul>
   
-        <li>
-          <a href="../osx/thunder-bridge/"><h3 class="contrast">iMac Retina 27 as the External Display</h3></a>
-          <time>2016-07-03</time>
-        </li>       
+  <article class="group">
   
-        <li>
-          <a href="../osx/switch-full-screen-app/"><h3 class="contrast">HyperSwitch: Switch back to active window any fullscreen window.</h3></a>
-          <time>2016-06-13</time>
-        </li>       
   
-        <li>
-          <a href="../osx/os-x-shortcut-for-editing/"><h3 class="contrast">OS X Shortcut for Editing</h3></a>
-          <time>2016-06-13</time>
-        </li>       
+    <h1>iMac Retina 27 as the External Display</h1>
   
-  </ul>
-  </br>
-  
-  <ul class="pagination">
-    <li>
-    
-      <span class="disabled">&laquo; </span>
-    
-    </li>
-    <li>1</li>
-    <li>
-    
-      <span class="disabled">&raquo;</span>
-    
-    </li>
-  </ul>
+  <p class="subtitle"><time>2016-07-03</time></p>
+  <p>It is known that the iMac Retina 27 inch does not support the Target Display Mode. And you cannot use an iMac as an external display. However, there is a workaround---use thunderblot bridge and screen sharing. Here is the setup.</p>
+<div class="list-container"><ol style="list-style-type: decimal">
+<li>Connect your Macbook with iMac.</li>
+<li>In the network, you should see a thunder bridge connection on both your iMac and Macbook. We only care the connection in your Macbook.</li>
+<li><span class="citation">@Macbook</span>, assign an manually IP address to your thunder bridge as shown below. (such that you won't need to reconnect with another IP address when you disconnected from the iMac)</li>
+<li><span class="citation">@iMac</span>, use screen sharing application to connect to your Macbook.</li>
+</ol></div>
+<div class="figure">
+<img alt="Thunder Bridge Configuration169.254" src="thunder-bridge.png"/>
+<p class="caption">Thunder Bridge Configuration<label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote">169.254<label class="margin-toggle sidenote-number" for="sn-1"></label><input class="margin-toggle" id="sn-1" type="checkbox"/><span class="sidenote"></span></span></p>
+</div>
+
+  </article>
 
 
   
