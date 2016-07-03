@@ -71,9 +71,17 @@
 <li><span class="citation">@iMac</span>, use screen sharing application to connect to your Macbook.</li>
 </ol></div>
 <div class="figure">
-<img alt="Thunder Bridge Configuration169.254" src="thunder-bridge.png"/>
-<p class="caption">Thunder Bridge Configuration<label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote">169.254<label class="margin-toggle sidenote-number" for="sn-1"></label><input class="margin-toggle" id="sn-1" type="checkbox"/><span class="sidenote"></span></span></p>
+<img alt="Thunder Bridge Configuration" src="thunder-bridge.png"/>
+<p class="caption">Thunder Bridge Configuration</p>
 </div>
+<p>I can still feel latency in the screen sharing. But it is workable:-)</p>
+<p>Now, one technical question--why should we assign an address in the form of <code>169.254.x.x</code>? This kind address is a <a href="https://www.wikiwand.com/en/Link-local_address#/IPv4">link-local address</a>, which is valid only for communications within the network segment or the broadcast domain that the host is connected to.</p>
+<blockquote>
+<p>In RFC 3927, the Internet Engineering Task Force has reserved the address block 169.254.0.0/16. From this block, the address range 169.254.1.0 to 169.254.254.255 may be used for link-local addressing in Internet Protocol Version 4.</p>
+</blockquote>
+<blockquote>
+<p>Microsoft refers to this address autoconfiguration method as Automatic Private IP Addressing (APIPA). It is sometimes also casually referred to as auto-IP.</p>
+</blockquote>
 
   </article>
 
