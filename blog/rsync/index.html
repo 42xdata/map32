@@ -1,0 +1,151 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
+  <title>
+    Rsync MAP32
+  </title>
+ 
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "c8fda848-22bf-4aa9-8200-eb22ba753156", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79221870-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+  <header>
+  <div>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Responsive -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-7778442232354635"
+      data-ad-slot="6816884022"
+      data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+    <nav class="group">   
+      <h1>🍁 M.A.P. 32</h1>
+      
+      <a  href="../../">Welcome</a>
+      
+        <a  class="active"  href="../../blog/">/blog</a>
+      
+        <a  href="../../osx/">/osx</a>
+      
+        <a  href="../../python/">/python</a>
+      
+        
+      
+        <a  href="../../daily/">/daily</a>
+      
+        <a  href="../../about/">/about</a>
+      
+    </nav>
+  </header>
+    <hr class="slender">
+    
+  
+  <article class="group">
+  
+  
+    <h1>Rsync</h1>
+  
+  <p class="subtitle"><time>2016-07-04</time></p>
+  <h2 id="problem-how-to-exclude-and-include-files-in-rsync">Problem: how to exclude and include files in rsync</h2>
+<h2 id="solution">Solution:</h2>
+<p>Use <code>--exclude</code> and <code>--include</code> options:</p>
+<p>http://unix.stackexchange.com/a/2503</p>
+<p>In short, use the following command the sync pdf only.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">rsync</span> -am --include=<span class="st">'*.pdf'</span> --include=<span class="st">'*/'</span> --exclude=<span class="st">'*'</span> ~/LaTeX/ ~/Output/</code></pre></div>
+<h2 id="tips">Tips</h2>
+<div class="list-container"><ul>
+<li>You can use <code>-n</code> or <code>--dry-run</code> options to test the result without actually running it.</li>
+<li>Use trailing slash when you sync two directly. The behaviour is explained in rsync's manual.</li>
+</ul></div>
+<blockquote>
+<p>A trailing slash on the source changes this behavior to avoid creating an additional directory level at the destination. You can think of a trailing / on a source as meaning "copy the contents of this directory" as opposed to "copy the directory by name", but in both cases the attributes of the containing directory are transferred to the containing directory on the desti- nation. In other words, each of the following commands copies the files in the same way, including their setting of the attributes of /dest/foo:</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">rsync</span> -av /src/foo /dest
+<span class="kw">rsync</span> -av /src/foo/ /dest/foo</code></pre></div>
+<p>Here is an example. First, let us setup test data.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="kw">mkdir</span> x y<span class="kw">;</span> <span class="kw">touch</span> x/x01<span class="kw">;</span> <span class="kw">touch</span> y/y01</code></pre></div>
+<h3 id="rsync-without-slash">rsync without slash</h3>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$  <span class="kw">rsync</span> -avz x y
+<span class="kw">building</span> file list ... done
+<span class="kw">x/</span>
+<span class="kw">x/x01</span>
+
+<span class="kw">sent</span> 118 bytes  received 48 bytes  332.00 bytes/sec
+<span class="kw">total</span> size is 0  speedup is 0.00
+
+$ <span class="kw">tree</span> y
+<span class="kw">y</span>
+├── <span class="kw">x</span>
+│   └── <span class="kw">x01</span>
+└── <span class="kw">y01</span>
+<span class="kw">1</span> directory, 2 files</code></pre></div>
+<h3 id="rsync-with-slash">rsync with slash</h3>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="kw">rsync</span> -avz x/ y
+<span class="kw">building</span> file list ... done
+<span class="kw">./</span>
+<span class="kw">x01</span>
+ 
+<span class="kw">sent</span> 116 bytes  received 48 bytes  328.00 bytes/sec
+<span class="kw">total</span> size is 0  speedup is 0.00
+
+$ <span class="kw">tree</span> y
+<span class="kw">y</span>
+├── <span class="kw">x01</span>
+└── <span class="kw">y01</span>
+ 
+<span class="kw">0</span> directories, 2 files</code></pre></div>
+
+  </article>
+
+
+  
+<footer>
+  <div>
+    <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+    <span class='st_facebook_hcount' displayText='Facebook'></span>
+    <span class='st_twitter_hcount' displayText='Tweet'></span>
+    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+    <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+    <span class='st_email_hcount' displayText='Email'></span>
+    </div>
+    </br>
+  <div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7778442232354635",
+        enable_page_level_ads: true
+      });
+    </script>
+    <!-- Blog -->
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7778442232354635" data-ad-slot="5113151625"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <hr class="slender">
+  <div>
+      <span>&copy; Copyright 2016 by 🍁 MAP32.</span></br></br>
+      <span>Powered by <a href=https://www.getlektor.com/>Lektor.</a></br></br>
+      <span>Theme is adapted from the <a href="//clayh53.github.io/tufte-jekyll">Tufte-Jekyll</a> theme.</span> 
+  </div>
+
+</footer>
+</body>
