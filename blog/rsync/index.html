@@ -75,7 +75,7 @@
 <li>Use trailing slash when you sync two directly. The behaviour is explained in rsync's manual.</li>
 </ul></div>
 <blockquote>
-<p>A trailing slash on the source changes this behavior to avoid creating an additional directory level at the destination. You can think of a trailing / on a source as meaning "copy the contents of this directory" as opposed to "copy the directory by name", but in both cases the attributes of the containing directory are transferred to the containing directory on the desti- nation. In other words, each of the following commands copies the files in the same way, including their setting of the attributes of /dest/foo:</p>
+<p>A trailing slash on the source changes this behavior to avoid creating an additional directory level at the destination. You can think of a trailing / on a source as meaning "copy the contents of this directory" as opposed to "copy the directory by name", but in both cases the attributes of the containing directory are transferred to the containing directory on the destination. In other words, each of the following commands copies the files in the same way, including their setting of the attributes of /dest/foo:</p>
 </blockquote>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">rsync</span> -av /src/foo /dest
 <span class="kw">rsync</span> -av /src/foo/ /dest/foo</code></pre></div>

@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>http://www.map32.me/</loc></url>
   <url><loc>http://www.map32.me/blog/</loc></url>
+  <url><loc>http://www.map32.me/blog/moth/</loc></url>
   <url><loc>http://www.map32.me/blog/rsync/</loc></url>
   <url><loc>http://www.map32.me/blog/bitcoin/</loc></url>
   <url><loc>http://www.map32.me/blog/timelog/</loc></url>
