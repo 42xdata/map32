@@ -2,10 +2,10 @@
 <head>
   <meta charset="utf-8">
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../static/style.css">
-  <link rel="stylesheet" href="../static/pygments.css">
+  <link rel="stylesheet" href="../../static/style.css">
+  <link rel="stylesheet" href="../../static/pygments.css">
   <title>
-    Daily News MAP32
+    Regex MAP32
   </title>
  
   <script type="text/javascript">var switchTo5x=true;</script>
@@ -42,19 +42,19 @@
     <nav class="group">   
       <h1>🍁 M.A.P. 32</h1>
       
-      <a  href="../">Welcome</a>
+      <a  href="../../">Welcome</a>
       
-        <a  href="../blog/">/blog</a>
+        <a  href="../../blog/">/blog</a>
       
-        <a  href="../osx/">/osx</a>
+        <a  href="../../osx/">/osx</a>
       
-        <a  href="../python/">/python</a>
+        <a  class="active"  href="../../python/">/python</a>
       
         
       
-        <a  class="active"  href="../daily/">/daily</a>
+        <a  href="../../daily/">/daily</a>
       
-        <a  href="../about/">/about</a>
+        <a  href="../../about/">/about</a>
       
     </nav>
   </header>
@@ -64,27 +64,18 @@
   <article class="group">
   
   
-    <h1>Daily News</h1>
+    <h1>Regex</h1>
   
-  <p class="subtitle"><time></time></p>
-  <h1 id="section">2016</h1>
-<h2 id="june">June</h2>
-<h3 id="june-26">June 26</h3>
+  <p class="subtitle"><time>2016-06-17</time></p>
+  <p>Armin Ronacher writes <a href="http://lucumr.pocoo.org/2015/11/18/pythons-hidden-re-gems/">a blog on Python's regular expression support</a>, where he refers Python's re is a hidden gem.</p>
+<p>Python provides two primitive operations: search and match.</p>
 <div class="list-container"><ul>
-<li>UK votes to leave EU on a nation-wide referendum (51.9% votes to exit)</li>
-<li>David Cameron resigns after the vote</li>
+<li><code>re.match()</code> checks for a match only at the beginning of the string</li>
+<li><code>re.search()</code> checks for a match anywhere in the string (this is what Perl does by default).</li>
 </ul></div>
-<h3 id="june-16">June 16</h3>
-<div class="list-container"><ul>
-<li>stat: <a href="http://stats.stackexchange.com/q/218604">With categorical data, can there be clusters without the variables being related?</a></li>
-</ul></div>
-<h3 id="june-14">June 14</h3>
-<h3 id="june-13">June 13</h3>
-<div class="list-container"><ul>
-<li>M$ acquries LinkedIn with 28.6 Billon Cash <label class="margin-toggle sidenote-number" for="sn-0"></label><input class="margin-toggle" id="sn-0" type="checkbox"/><span class="sidenote"> <a href="http://news.microsoft.com/2016/06/13/microsoft-to-acquire-linkedin/">Microsoft to acquire LinkedIn By Microsoft News Center</a> </span> <label class="margin-toggle sidenote-number" for="sn-1"></label><input class="margin-toggle" id="sn-1" type="checkbox"/><span class="sidenote"> <a href="http://www.newyorker.com/business/currency/why-microsoft-wanted-linkedin">Why Microsoft Wanted LinkedIn by New Yorker</a> </span>. It really superises when I heard this in the morning.</li>
-<li>Apple WWDC (OS X -&gt; MacOS). Not many surprise.</li>
-<li>Electronic Entertainment Expo (E3).</li>
-</ul></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> re.match(<span class="st">"c"</span>, <span class="st">"abcdef"</span>)    <span class="co"># No match</span>
+<span class="op">&gt;&gt;&gt;</span> re.search(<span class="st">"c"</span>, <span class="st">"abcdef"</span>)   <span class="co"># Match</span>
+<span class="op">&lt;</span>_sre.SRE_Match <span class="bu">object</span> at ...<span class="op">&gt;</span></code></pre></div>
 
   </article>
 
